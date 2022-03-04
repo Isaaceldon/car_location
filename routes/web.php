@@ -25,22 +25,7 @@ Route::get('faq',function(){
 Route::get('connexion',function(){
     return view('connexion');
 });
-<<<<<<< HEAD
 
-// *****************************ADMIN ROUTES****************************
-
-Route::get('/admin', function(){
-return view('dashbord');
-});
-
-Route::resource('admin/marques', MarqueController::class);
-Route::resource('admin/categories', CategorieController::class);
-Route::resource('admin/cars', CarController::class);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
 Route::get('info',function(){
     return view('info');
 });
@@ -60,4 +45,18 @@ Route::get('accueil',function(){
 Route::get('apropos',function(){
     return view('apropos');
 });
->>>>>>> 206b35936d88aed483b635e933667814a5fdc667
+
+
+// *****************************ADMIN ROUTES****************************
+
+Route::get('/admin', function(){
+return view('dashbord');
+});
+
+Route::resource('admin/marques', MarqueController::class);
+Route::resource('admin/categories', CategorieController::class);
+Route::resource('admin/cars', CarController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
