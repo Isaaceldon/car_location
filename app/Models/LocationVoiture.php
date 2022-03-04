@@ -22,8 +22,6 @@ class LocationVoiture extends Model
         'date_location_back',
         'heure_location_back',
         'card',
-        'car_id',
-        'user_id',
     ];
 
     public function car()
