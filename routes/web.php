@@ -5,11 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\MarqueController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\reservationController;
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('animation',function(){
     return view('animation');
 });
@@ -32,16 +30,17 @@ Route::get('info',function(){
 Route::get('contact',function(){
     return view('contact');
 });
-Route::get('reserve',function(){
-    return view('reserve');
-});
+Route::get('reserve1',[reservationController::class, 'create']);
+Route::post('reservation',[reservationController::class, 'store'])->name('reservation');
+
+
 
 Route::get('securite1',function(){
     return view('securite1');
 });
-Route::get('accueil',function(){
-    return view('accueil');
-});
+//  Route::get('/',function(){
+//      return view('accueil');
+//  });
 Route::get('apropos',function(){
     return view('apropos');
 });
@@ -57,6 +56,8 @@ Route::resource('admin/marques', MarqueController::class);
 Route::resource('admin/categories', CategorieController::class);
 Route::resource('admin/cars', CarController::class);
 
+
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);

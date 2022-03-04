@@ -24,18 +24,18 @@ class LocationVoitureRequest extends FormRequest
     public function rules()
     {
         return [
-            'adresse'=>'bail|required',
-            'ville'=>'bail|required',
-            'pays'=>'bail|required',
-            'maison'=>'bail|required',
-            'societe'=>'bail|required',
-            'date_location'=>'bail|required',
-            'heure_location'=>'bail|required',
-            'date_location_back'=>'bail|required',
-            'heure_location_back'=>'bail|required',
-            'card'=>'bail|required',
-            'car_id'=>'bail|required',
-            'user_id'=>'bail|required',
+             'adresse'=>'bail|required',
+             'ville'=>'bail|required',
+             'pays'=>'bail|required',
+             'maison'=>'bail|required',
+             'societe'=>'bail|required',
+             'date_location'=>'bail|required',
+             'heure_location'=>'bail|required',
+             'date_location_back'=>'bail|required',
+             'heure_location_back'=>'bail|required',
+             'card'=>'bail|required',
+             'car_id'=>'bail|required',
+             'user_id'=>'bail|required',
         ];
     }
 }
