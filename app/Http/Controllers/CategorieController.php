@@ -38,7 +38,7 @@ class CategorieController extends Controller
        $categorie = new Categorie();
        $categorie->type_categorie = $request->type_categorie;
        $categorie->save();
-      return back();
+      return back()->with('addedMessage','La catégorie a été ajoutée avec succès !');
     }
 
     /**
@@ -81,7 +81,7 @@ class CategorieController extends Controller
             ]
             );
 
-            return back();
+            return redirect()->route('categories.index')->with('updatedMessage', 'La catégorie a été modifié avec succès');
     }
 
     /**
@@ -93,6 +93,6 @@ class CategorieController extends Controller
     public function destroy($id)
     {
         Categorie::find($id)->delete();
-        return back();
+        return back()->with('deletedMessage','La categorie a été suprimée avec succès');
     }
 }

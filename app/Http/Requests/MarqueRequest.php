@@ -24,7 +24,7 @@ class MarqueRequest extends FormRequest
     public function rules()
     {
         return [
-            'type_marque' => 'bail|required',
+            'type_marque' => 'bail|required|unique:marques,type_marque',
         ];
     }
 }

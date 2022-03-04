@@ -17,6 +17,12 @@
                     </div>
                 @endif
 
+                @if (session('addedMessage'))
+                    <div class="alert alert-success mb-3">
+                    <h6> {{session('addedMessage')}} </h6>
+                    </div> 
+                @endif
+
 
                 <form method="POST"  action=" {{route('categories.store')}} ">
                   @csrf

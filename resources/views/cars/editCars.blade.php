@@ -28,6 +28,7 @@
 
                 <form method="POST" action=" {{ route('cars.update', ['car'=> $currentCar->id]) }} " enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="row mb-3">
                         <div class="form-group col-md-4 ">
                             <label for="nom" class="control-label">Nom</label>
@@ -91,7 +92,9 @@
                     <div class="row mb-3">
                         <div class="form-group col-md-4">
                             <label for="photo" form="control-label">Photo</label>
-                            <input type="file" name="photo" id="photo" class="form-control"  html="{{ '<img src="'.asset('storage/images_cars/'.$currentCar->photo).'" width="50" height="50" alt="vehicule">' }}">
+                            <input type="file" name="photo" id="photo" class="form-control"  value="{{ '<img src="'.asset('storage/images_cars/'.$currentCar->photo).'" width="50" height="50" alt="vehicule">' }}">
+                            <img src="{{ asset('storage/images_cars/' . $currentCar->photo) }}" width="150" height="100"
+                                            alt="vehicule">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="control-label" for="capacite_reservoir">Capacité du réservoir</label>

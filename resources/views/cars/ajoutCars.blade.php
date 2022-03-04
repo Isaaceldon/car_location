@@ -18,10 +18,18 @@
                     </div>
                 @endif
 
-                @if (session('status'))
+                @if (session('addedMessage'))
                     
                     <div class="alert alert-success">
-                        <h3> {{ session('status') }} </h3>
+                        <h6> {{ session('addedMessage') }} </h6>
+                    </div>
+                    
+                @endif
+
+                @if (session('updatedMessage'))
+                    
+                    <div class="alert alert-success">
+                        <h6> {{ session('addedMessage') }} </h6>
                     </div>
                     
                 @endif

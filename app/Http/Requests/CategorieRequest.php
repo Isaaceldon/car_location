@@ -24,7 +24,7 @@ class CategorieRequest extends FormRequest
     public function rules()
     {
         return [
-            'type_categorie' => 'bail|required',
+            'type_categorie' => 'bail|required|unique:categories,type_categorie',
         ];
     }
 }

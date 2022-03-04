@@ -7,6 +7,7 @@ use App\Http\Requests\CarFormRequest;
 use App\Models\Car;
 use App\Models\Categorie;
 use App\Models\Marque;
+use Illuminate\Support\Facades\File;
 
 class CarController extends Controller
 {
@@ -58,29 +59,29 @@ class CarController extends Controller
             $filename = time(). '.' .$extension;
             $file->storeAs('public/images_cars',$filename);
 
-        $infoCar = [
-            'nom'=>$request->nom,
-            'user_id'=>1,
-            'categorie_id'=>$request->categorie_id,
-            'description'=>$request->description,
-            'marque_id'=>$request->marque_id,
-            'alimentation'=>$request->alimentation,
-            'carburant'=>$request->carburant,
-            'prix'=>$request->prix,
-            'capacite_reservoir'=>$request->capacite_reservoir,
-            'poids_vide'=>$request->poids_vide,
-            'nombre_usager'=>$request->nombre_usager,
-            'dimensions'=>$request->dimensions,
-            'empattement'=>$request->empattement,
-            'cylindre'=>$request->cylindre,
-            'garde_sol'=>$request->garde_sol,
-            'photo'=>$filename,
-        ];
-
-        Car::create($infoCar);
-
     }
-        return back()->with('status', 'Le véhicule a été enrégistré avec succès!');
+
+    $infoCar = [
+        'nom'=>$request->nom,
+        'user_id'=>1,
+        'categorie_id'=>$request->categorie_id,
+        'description'=>$request->description,
+        'marque_id'=>$request->marque_id,
+        'alimentation'=>$request->alimentation,
+        'carburant'=>$request->carburant,
+        'prix'=>$request->prix,
+        'capacite_reservoir'=>$request->capacite_reservoir,
+        'poids_vide'=>$request->poids_vide,
+        'nombre_usager'=>$request->nombre_usager,
+        'dimensions'=>$request->dimensions,
+        'empattement'=>$request->empattement,
+        'cylindre'=>$request->cylindre,
+        'garde_sol'=>$request->garde_sol,
+        'photo'=>$filename,
+    ];
+
+    Car::create($infoCar);
+        return back()->with('addedMessage', 'Le véhicule a été enrégistré avec succès!');
     }
 
     /**
@@ -103,16 +104,11 @@ class CarController extends Controller
     public function edit($id)
     {
         $myCar = Car::find($id);
-        // $categorieOfCar = Car::find($id)->categorie;
-        // $marqueOfCar = Car::find($id)->marque;
         $lesmarques = Marque::all();
         $lescategories = Categorie::all();
         return view('cars.editCars')->with(
             [
                 'currentCar'=> $myCar,
-                // 'currentCategorieOfCar'=>$categorieOfCar,
-                // 'currentMarqueOfCar'=>$marqueOfCar
-
                 'lesmarques'=>$lesmarques,
                 'lescategories'=>$lescategories
             ]
@@ -130,12 +126,20 @@ class CarController extends Controller
     {
        $updatedCar = Car::find($id);
 
-       if($request->hasFile('photo')){
-        $file = $request->file('photo');
-        $extension = $file->getClientOriginalExtension();
-        $filename = time(). '.' .$extension;
-        $file->storeAs('public/images_cars',$filename);
-}
+      if ($request->hasFile('photo'))
+      {
+          $destination = 'public/images_cars/'.$updatedCar->photo;
+          if(File::exists($destination)){
+              File::delete($destination);
+          }
+
+          $file =$request->file('photo');
+          $extension = $file->getClientOriginalExtension();
+          $filename = time(). '.' .$extension;
+          $file->storeAs('public/images_cars',$filename);
+      }
+       
+
         $infoCar = [
             'nom'=>$request->nom,
             'user_id'=>1,
@@ -152,10 +156,13 @@ class CarController extends Controller
             'empattement'=>$request->empattement,
             'cylindre'=>$request->cylindre,
             'garde_sol'=>$request->garde_sol,
-           
+           'photo'=>$filename
         ];
 
        
+        $updatedCar->update($infoCar);
+
+        return redirect()->route('cars.index')->with('updatedMessage','Le véhicule a été mis à jour avec succès !');
     
     }
    
@@ -170,6 +177,8 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Car::find($id)->delete();
+        return back()->with('deletedMessage','Le véhicule a été suprimé avec succès !');
+
     }
 }

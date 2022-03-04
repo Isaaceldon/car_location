@@ -40,7 +40,7 @@ class MarqueController extends Controller
         $marque = new Marque();
        $marque->type_marque = $request->type_marque;
        $marque->save();
-       return back();
+       return back()->with('addedMessage', 'La marque a été ajoutée avec succès !');
     }
 
     /**
@@ -81,7 +81,7 @@ class MarqueController extends Controller
          ]
      );  
 
-     return back();
+     return redirect()->route('marques.index')->with('updatedMessage', 'La marque a été modifié avec succès');
     }
 
     /**
@@ -92,6 +92,7 @@ class MarqueController extends Controller
      */
     public function destroy($id)
     {
-        //
+       Marque::find($id)->delete();
+        return back()->with('deletedMessage','La marque a été suprimée avec succès');
     }
 }
