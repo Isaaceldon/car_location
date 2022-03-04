@@ -1,4 +1,10 @@
 @extends("../dashbord")
+@section('origine1')
+    <span class="font-weight-bold font-italic text-decoration-none">Véhicule</span>
+@endsection
+@section('origine2')
+    <span class="font-weight-bold font-italic text-decoration-none">Liste des Véhicules</span>
+@endsection
 @section('main-content')
     <div class="col-md-12" style="margin: 0px auto;">
         <div class="tile">
@@ -9,15 +15,15 @@
                     </div>
                 @endif
                 @if (session('deletedMessage'))
-                <div class="alert alert-success mb-3">
-                    <h6> {{ session('deletedMessage') }} </h3>
-                </div>
-            @endif
+                    <div class="alert alert-success mb-3">
+                        <h6> {{ session('deletedMessage') }} </h3>
+                    </div>
+                @endif
                 <div class="text-center mb-4">
                     <a class="btn btn-info" href=" {{ route('cars.create') }} ">Ajouter une Voiture</a>
                 </div>
-                <div>
-                    <table class="table table-responsive table-striped table-success table-bordered text-center" id="sampleTable">
+                <div class="table-responsive container">
+                    <table class="table table-striped table-success table-bordered text-center " id="sampleTable">
                         <thead>
                             <tr>
                                 <th>Photo</th>
@@ -36,8 +42,8 @@
 
                             @foreach ($allcars as $car)
                                 <tr>
-                                    <td><img src="{{ asset('storage/images_cars/' . $car->photo) }}" width="50" height="50"
-                                            alt="vehicule"></td>
+                                    <td><img src="{{ asset('storage/images_cars/' . $car->photo) }}" width="150"
+                                            height="100" alt="vehicule"></td>
                                     <td> {{ $car->nom }} </td>
                                     <td>{{ $allmarques->find($car->marque_id)->type_marque }}</td>
                                     <td>{{ $allcategories->find($car->categorie_id)->type_categorie }}</td>
@@ -48,7 +54,7 @@
                                     <td>{{ $car->statut }}</td>
                                     <td>
 
-                                        <div class="dropdown">
+                                        <div class=" dropstart">
                                             <button class="btn btn-secondary dropdown-toggle" type="button"
                                                 id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Action
@@ -80,4 +86,5 @@
             </div>
         </div>
     </div>
+    
 @endsection

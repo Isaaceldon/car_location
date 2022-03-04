@@ -1,5 +1,12 @@
 @extends('../dashbord')
 
+@section('origine1')
+    <span class="font-weight-bold font-italic text-decoration-none">Véhicule</span>
+@endsection
+@section('origine2')
+    <span class="font-weight-bold font-italic text-decoration-none">Ajout de Véhicule/span>
+@endsection
+
 @section('main-content')
 
 
