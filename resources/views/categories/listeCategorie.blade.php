@@ -17,7 +17,7 @@
                 <div class="text-center mb-4">
                     <a class="btn btn-info" href=" {{ route('categories.create') }} ">Ajouter une catégorie</a>
                 </div>
-                <div class="table-responsive">
+                <div>
                     <table class="table table-striped table-success table-bordered" id="sampleTable">
                         <thead>
                             <tr>
