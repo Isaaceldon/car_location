@@ -10,7 +10,22 @@
 
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
+.mySlides {
+  display: none;
+  
+}
+/*#lienslideId1{
+  background-image: url('images/foret1.jpg');
+
+}
+#lienslideId2{
+  background-image: url('images/foret2.jpg');
+
+}
+#lienslideId3{
+  background-image: url('images/foret3.jpg');
+
+}*/
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -32,14 +47,6 @@ img {vertical-align: middle;}
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
 
 /* The dots/bullets/indicators */
 .dot {
@@ -64,13 +71,15 @@ img {vertical-align: middle;}
         width: 40%;
 
     }
+    .lienslide>a:hover{
+      color: blue;
+    }
     #lienslideId{
         display: flex;
         justify-content: center;
         align-items: center; 
         color: white;
-        margin-bottom:200px;
-       
+        margin-bottom:2400px; 
     }
     .lienslide a{
         list-style-type: none;
@@ -949,6 +958,25 @@ section {
 /*--------------------------------------------------------------
 # Values
 --------------------------------------------------------------*/
+#box img{
+  padding: 8px;
+  margin: 0;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  
+}
+#box{
+  padding: 15px 25px;
+}
+#box>a{
+  background-color: blue;
+  padding: 10px 40px 10px 40px;
+  color: white;
+  font-weight: bold;
+}
+.h33{
+  margin-top: 20px;
+}
 .values .box {
   padding: 30px;
   box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
@@ -1682,7 +1710,7 @@ section {
 }
 
 .testimonials .testimonial-item .stars i {
-  color: #ffc107;
+  color: #00f;
   margin: 0 1px;
 }
 
@@ -2577,7 +2605,7 @@ section {
 .footer {
   background: #f6f9ff;
   padding: 0 0 30px 0;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer .footer-newsletter {
@@ -2608,7 +2636,13 @@ section {
   border: 0;
   padding: 8px;
   width: calc(100% - 140px);
+  border: none;
 }
+.footer .footer-newsletter form input[type="email"]:focus {
+  border: none;
+}
+
+
 
 .footer .footer-newsletter form input[type="submit"] {
   position: absolute;
@@ -2737,6 +2771,10 @@ section {
 .footer .footer-top .footer-contact p {
   line-height: 26px;
 }
+.footer-contact{
+ 
+  width: 20%;
+}
 
 .footer .copyright {
   text-align: center;
@@ -2749,4 +2787,224 @@ section {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+
+
+.divH4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.h41{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width:85%;
+  text-align: justify;
+  line-height: 40px;
+  padding: 10px;
+}
+.listeCaracteristique{
+  line-height: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.listeCaracteristique>p>span:first-child{
+  font-weight: bold;
+}
+.btn-info,.btn-reserve{
+  border: 2px solid red;
+  padding: 5px;
+  margin-top: 20px;
+  border-radius: 7px;
+  font-weight: bold;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+.btn-info,.btn-reserve:hover{
+  color: red;
+  background-color: white;
+  border: 2px solid red;
+}
+.btn-reserve,.btn-info:hover{
+  color: white;
+  background-color: red;
+  border: 2px solid red;
+}
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email], input[type=textarea], input[type=phone], input[type=date], input[type=file],input[type=time], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 0px 0 12px 0;
+  position: relative;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/* The Modal (background) */
+.modal1 {
+  display: none;
+ /* Hidden by default */
+  margin-bottom: 200px;
+  z-index: 5;
+  width: 200%;
+  position: absolute;
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+ /* 5% from the top, 15% from the bottom and centered */
+  width: 100%;
+ /* Could be more or less, depending on screen size */
+  z-index: 5;
+  position: relative;
+}
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover, .close:focus {
+  color: red;
+  cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s 
+}
+@-webkit-keyframes animatezoom {
+  from {
+     -webkit-transform: scale(0)
+ }
+  to {
+     -webkit-transform: scale(1)
+ }
+}
+@keyframes animatezoom {
+  from {
+     transform: scale(0)
+ }
+  to {
+     transform: scale(1)
+ }
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+      display: block;
+      float: none;
+ }
+  .cancelbtn {
+      width: 100%;
+ }
+}
+input[type=textarea]{
+  height: 100px;
+  word-wrap: break-word;
+}
+.style_2{
+  margin: 40px 0;
+}
+/*--- news_4 ---*/
+.news_4 form{
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 20px 0;
+}
+.news_4 form .form-row{
+  margin-bottom: 15px;
+}
+.news_4 form h4{
+  font-size: 20px;
+  color: #000 !important;
+  margin-bottom: 10px;
+}
+.news_4 form p{
+  color: #777;
+  font-size: 14px;
+  margin: 25px 0;
+}
+.news_4 form label{
+  font-size: 13px;
+  font-weight: bold;
+  color: #000 !important;
+  letter-spacing: 0.5px;
+}
+.news_4 form .underline{
+  width: 40px;
+ /*margin-left: -220px;
+ */
+  height: 3px;
+  border: none;
+  background-color: #6610f2;
+}
+.news_4 form .form-control{
+  border: solid 2px #eee;
+  border-radius: 20px;
+  height: 35px;
+  padding: 10px;
+  font-size: 13px;
+  color: #777;
+}
+.news_4 form textarea.form-control{
+  border-radius: 15px;
+  height: 120px;
+  padding: 20px;
+}
+.news_4 form .btn{
+  background-color: #6610f2;
+  color: #fff;
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 5px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }

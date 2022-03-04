@@ -31,3 +31,22 @@ Route::get('faq',function(){
 Route::get('connexion',function(){
     return view('connexion');
 });
+Route::get('info',function(){
+    return view('info');
+});
+Route::get('contact',function(){
+    return view('contact');
+});
+Route::get('reserve',function(){
+    return view('reserve');
+});
+
+Route::get('securite1',function(){
+    return view('securite1');
+});
+Route::get('accueil',function(){
+    return view('accueil');
+});
+Route::get('apropos',function(){
+    return view('apropos');
+});
