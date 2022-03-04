@@ -82,6 +82,6 @@
           </div>
   
       </section><!-- End Values Section -->
-
+      @include('partials.footer')
 @endsection
 

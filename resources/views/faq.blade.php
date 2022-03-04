@@ -3,7 +3,7 @@
     @include("partials.header")
 
     <div class="gamme">
-        <a href="#">Gamme > Camry</a>
+        <a href="#">Accueil > faq</a>
     </div>
     <p class="p1">FAQ</p>
 
@@ -164,4 +164,6 @@
   
       </section><!-- End F.A.Q Section -->
 
+
+      @include('partials.footer')
 @endsection    
