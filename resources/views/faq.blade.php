@@ -1,6 +1,6 @@
-@extends('app')
-@section('content')
-    @include('partials.header')
+@extends("app")
+@section("content")
+    @include("partials.header")
 
     <div class="gamme">
         <a href="#">Gamme > Camry</a>

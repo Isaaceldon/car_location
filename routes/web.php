@@ -1,17 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\MarqueController;
+use App\Http\Controllers\CategorieController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,3 +25,17 @@ Route::get('faq',function(){
 Route::get('connexion',function(){
     return view('connexion');
 });
+
+// *****************************ADMIN ROUTES****************************
+
+Route::get('/admin', function(){
+return view('dashbord');
+});
+
+Route::resource('admin/marques', MarqueController::class);
+Route::resource('admin/categories', CategorieController::class);
+Route::resource('admin/cars', CarController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
