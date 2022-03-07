@@ -66,7 +66,7 @@
 
 </style>
   <div class="gamme">
-    <a href="#">Gamme > Sécurité</a>
+    <a href="#">Véhicules > Sécurité</a>
   </div>
   <p class="p1">POLITIQUE DE SECURITE</p>
 

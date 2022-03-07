@@ -6,10 +6,11 @@ use App\Models\Car;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LocationVoiture extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'adresse',
@@ -22,6 +23,8 @@ class LocationVoiture extends Model
         'date_location_back',
         'heure_location_back',
         'card',
+        'car_id',
+        'user_id'
     ];
 
     public function car()

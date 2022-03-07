@@ -28,14 +28,12 @@ class LocationVoitureRequest extends FormRequest
              'ville'=>'bail|required',
              'pays'=>'bail|required',
              'maison'=>'bail|required',
-             'societe'=>'bail|required',
+             'societe'=>'bail',
              'date_location'=>'bail|required',
              'heure_location'=>'bail|required',
              'date_location_back'=>'bail|required',
              'heure_location_back'=>'bail|required',
-             'card'=>'bail|required',
-             'car_id'=>'bail|required',
-             'user_id'=>'bail|required',
+             'card'=>'bail|required'
         ];
     }
 }

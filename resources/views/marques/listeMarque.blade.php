@@ -13,6 +13,9 @@
                         <h6> {{ session('updatedMessage') }} </h3>
                     </div>
                 @endif
+                <div class="text-center my-3 alert alert-info">
+                    <h4 class="text-danger font-italic">Liste des marques </h4>
+                </div>
                 <div class="text-center mb-4">
                     <a class="btn btn-info" href=" {{ route('marques.create') }} "><i
                             class="fa fa-lg fa-plus m-2"></i>Ajouter une marque</a>

@@ -2,6 +2,8 @@
     footer{
         width: 100%;
     }
+
+
 </style>
 
 <footer id="footer" class="footer" >
@@ -11,11 +13,11 @@
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
             <h4 class=" fs-5 ">Notre Newsletter</h4>
-            <p class="fs-5">Veillez-vous abonnez pour ne rater aucune des nouvelles actualités</p>
+            <p class="fs-5">Veuillez-vous abonnez pour ne rater aucune des nouvelles actualités</p>
           </div>
           <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email" style="padding:5px 0 5px 0; border: none;"><input type="submit" value="Subscribe">
+            <form action="" method="post"  id="newletter-form">
+              <input type="email" name="email" style=""><input type="submit" value="Subscribe">
             </form>
           </div>
         </div>
@@ -27,7 +29,7 @@
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
             <a href="index.html" class="logo d-flex align-items-center">
-              <img src="images/logo.png" alt="">
+              <img src="/images/logo.png" alt="">
               <span>Car House Hiring</span>
             </a>
             <p class="" style="font-size: 20px;">Le bon endroit pour louer vos voitures en toute sécurité pour vos courses et manifestations de tout genre. Nous faisons tout pour votre bien-être.</p>
@@ -42,9 +44,9 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Liens utiles</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Accueil</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Location</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Sécurité</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href=" {{url('../acuueil')}} ">Accueil</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href=" {{route('location.vehiculesALouer')}} ">Location</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{{url('../securite1')}}">Sécurité</a></li>
               
             </ul>
           </div>
@@ -60,11 +62,8 @@
 
           <div class="col-lg-6 col-md-12 footer-contact text-center text-md-start">
             <h4>Nous contacter</h4>
-            <p>
-           
-              <strong>Contacts:</strong> (+229) 95371154 <br> <br>
-              <strong>Email:</strong> contactcarhiring@gmail.xyz<br>
-            </p>
+            <p> <strong>Contacts:</strong> <br> (+229) 95371154 <br> (+229) 69212115 </p>
+              <p><strong>Email:</strong> contactcarhiring@gmail.com<br></p>
 
           </div>
 
@@ -74,7 +73,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>ifri-uac | {{ Date('Y') }} </span></strong>. Tous droits résevés
+        Copyright <strong><span>&copy; Car House Hiring | {{ Date('Y') }} </span></strong>. Tous droits résevés
       </div>
     </div>
   </footer><!-- End Footer -->

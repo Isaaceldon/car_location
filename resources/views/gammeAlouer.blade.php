@@ -2,86 +2,36 @@
 @section('content')
     @include('partials.header')
 
+
     <div class="gamme">
-        <a href="#">Gamme</a>
+      <a href="#">Véhicules</a>
     </div>
-    <p class="p1">JE DÉCOUVRE LA GAMME A LOUER</p>
-
-     <section id="values" class="values">
-       
-  
-        <div class="container-fluid mt-" data-aos="fade-up">
-  
-          <div class="row ">
-  
-            <a href="#" class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-              <div class="box" data-aos="fade-up" data-aos-delay="400">
-                <img src="images/auto1.png" class="img-fluid" alt="">
-                <h3>COROLLA CROSS</h3>
-              </div>
-            </a>
-  
-            <a href="#"  class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-              <div class="box" data-aos="fade-up" data-aos-delay="400">
-                <img src="images/auto2.png" class="img-fluid" alt="">
-                <h3>STARLET</h3>
-              </div>
-            </a>
-  
-            <a href="#"  class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-              <div class="box" data-aos="fade-up" data-aos-delay="600">
-                <img src="images/auto3.png" class="img-fluid" alt="">
-                <h3>CAMRY</h3>
-              </div>
-            </a>
-            <a href="#"  class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                <div class="box" data-aos="fade-up" data-aos-delay="600">
-                  <img src="images/auto4.png" class="img-fluid" alt="">
-                  <h3>RAV4</h3>
-                </div>
-            </a>
-  
-          </div>
-  
-        </div>
-
-       
-        <div class="container-fluid" data-aos="fade-up" style="margin-top: 20px;">
-  
-            <div class="row ">
+    <p class="p1">JE DÉCOUVRE LES VEHECULES A LOUER</p>
     
-              <a href="#" class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                <div class="box" data-aos="fade-up" data-aos-delay="400">
-                  <img src="images/auto1.png" class="img-fluid" alt="">
-                  <h3>COROLLA CROSS</h3>
-                </div>
-              </a>
+    <section id="values" class="values">
+     
     
-              <a href="#"  class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                <div class="box" data-aos="fade-up" data-aos-delay="400">
-                  <img src="images/auto2.png" class="img-fluid" alt="">
-                  <h3>STARLET</h3>
-                </div>
-              </a>
+      <div class="container-fluid mt-" data-aos="fade-up">
     
-              <a href="#"  class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                <div class="box" data-aos="fade-up" data-aos-delay="600">
-                  <img src="images/auto3.png" class="img-fluid" alt="">
-                  <h3>CAMRY</h3>
-                </div>
-              </a>
-              <a href="#"  class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                  <div class="box" data-aos="fade-up" data-aos-delay="600">
-                    <img src="images/auto4.png" class="img-fluid" alt="">
-                    <h3>RAV4</h3>
-                  </div>
-              </a>
+        <div class="row ">
     
+          @foreach ($allCars as  $car)
+          <a href="{{route('location.show',['location'=>$car->id])}}" class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="400">
+              <img src="{{asset('storage/images_cars/'.$car->photo)}}" class="img-fluid" alt="véhicule image" height="300"  width="500">
+              <h3> {{$car->nom}} </h3>
             </div>
+          </a>
     
-          </div>
-  
-      </section><!-- End Values Section -->
+          @endforeach
+          
+    
+        </div>
+    
+      </div>
+    </div>
+    
+    </section>
       @include('partials.footer')
 @endsection
 

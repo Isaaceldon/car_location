@@ -80,7 +80,7 @@
               <i class="bi bi-telephone" style="color: rgb(240, 125, 125)" ></i>
               <div>
                   <h4 style="color: #000; font-weight: bold; font-size:1.4rem;"> Téléphone</h4>
-                  <a href="phone" class="">9537114 / 91598299</a>
+                  <a href="phone" class="">(+229)9537114 <br>(+229)69212115</a>
                 </div>
             </div>
           </div>
@@ -91,7 +91,7 @@
             <i class="bi bi-envelop"></i>
             <div>
               <h4 style="color: #000; font-weight: bold; font-size:1.4rem;"> Gmail</h4>
-              <a href="wa.me/" class="fb">contactcarhiring@gmail.xyz</a>
+              <a href="wa.me/" class="fb">contactcarhiring@gmail.com</a>
             </div>
           </div>
         </div>

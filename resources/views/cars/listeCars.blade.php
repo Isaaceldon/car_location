@@ -19,6 +19,9 @@
                         <h6> {{ session('deletedMessage') }} </h3>
                     </div>
                 @endif
+                <div class="text-center my-3 alert alert-info">
+                    <h4 class="text-danger font-italic">Liste des véhicules </h4>
+                </div>
                 <div class="text-center mb-4">
                     <a class="btn btn-info" href=" {{ route('cars.create') }} ">Ajouter une Voiture</a>
                 </div>

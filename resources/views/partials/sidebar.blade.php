@@ -27,11 +27,14 @@
           <ul class="treeview-menu">
             
         <li><a class="app-menu__item" href=" {{route('cars.index')}} "><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Liste des véhicules</span></a></li>      
-      </li>
+    
       <li><a class="app-menu__item" href=" {{route('cars.create')}} "><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Ajouter un nouveau</span></a></li>      
-      </li>
+    
           </ul>
-        </li>       
+        </li> 
+        
+        <li><a class="app-menu__item" href=" {{route('location.index')}} "><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Personnes Ayant <br> Loué Voiture</span></a></li>      
+
         </ul>
     </aside>
 

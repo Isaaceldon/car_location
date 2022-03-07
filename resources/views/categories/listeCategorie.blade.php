@@ -14,6 +14,9 @@
                         <h6> {{ session('updatedMessage') }} </h3>
                     </div>
                 @endif
+                <div class="text-center my-3 alert alert-info">
+                    <h4 class="text-danger font-italic">Liste des catégories </h4>
+                </div>
                 <div class="text-center mb-4">
                     <a class="btn btn-info" href=" {{ route('categories.create') }} ">Ajouter une catégorie</a>
                 </div>

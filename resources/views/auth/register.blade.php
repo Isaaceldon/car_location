@@ -1,5 +1,4 @@
 @extends('app')
-
 @section('content')
 @include('../partials.header')
 
@@ -30,18 +29,49 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="last_name" class="col-md-4 col-form-label text-md-end">{{ __('Nom') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
 
-                                @error('name')
+                                @error('last_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="first_name" class="col-md-4 col-form-label text-md-end">{{ __('Prénoms') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
+
+                                @error('first_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <label for="telephone" class="col-md-4 col-form-label text-md-end">{{ __('Téléphone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus>
+
+                                @error('telephone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                       
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
@@ -82,7 +112,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit " class="btn btn-primary fs-4 ">
-                                    {{ __('Inscription') }}
+                                    {{ __('S\'inscrire') }}
                                 </button>
                             </div>
                         </div>
