@@ -1,7 +1,7 @@
 <header id="header" class="header shadow" style=" padding:30px 0 30px 0;;">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center" >
+      <a href="url{{url('/')}}" class="logo d-flex align-items-center" >
         <img src="/images/logo.png" alt=""  style="width: 80px;height:100px">
         <span style="font-size: 2rem;">Car House Hiring</span>
       </a>

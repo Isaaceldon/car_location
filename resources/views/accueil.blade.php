@@ -7,30 +7,30 @@
     <div class="mySlides fade p" style="width: 100%">
        <img src="images/foret2.jpg" style="width:100%; height:870px;">
        <div class="text" id="lienslideId">
-          <div class="lienslide">
-             <a href="{{url('../gammeAlouer')}}">Je loue</a>
-             <a href="#">Après location</a>
-             <a href="{{url('../contact')}}">Je contacte</a>
-          </div>
+        <div class="lienslide">
+          <a href="{{url('locations/vehicules')}}">Je loue</a>
+          <a href="#">Après location</a>
+          <a href="{{url('contact')}}">Je contacte</a>
+       </div>
        </div>
     </div>
     <div class="mySlides fade">
        <img src="images/foret1.jpg" style="width:100%;height:870px;">
        <div class="text" id="lienslideId">
-          <div class="lienslide">
-             <a href="#">Je loue</a>
-             <a href="#">Après location</a>
-             <a href="#">Je contacte</a>
-          </div>
+        <div class="lienslide">
+          <a href="{{url('locations/vehicules')}}">Je loue</a>
+          <a href="#">Après location</a>
+          <a href="{{url('contact')}}">Je contacte</a>
+       </div>
        </div>
     </div>
     <div class="mySlides fade">
     <img src="images/foret2.jpg" style="width:100%;height:870px;">
     <div class="text" id="lienslideId">
        <div class="lienslide">
-          <a href="#">Je loue</a>
+          <a href="{{url('locations/vehicules')}}">Je loue</a>
           <a href="#">Après location</a>
-          <a href="#">Je contacte</a>
+          <a href="{{url('contact')}}">Je contacte</a>
        </div>
     </div>
     <br>
@@ -56,7 +56,7 @@
           <img src="images/auto4.png" class="img-fluid" alt="">
           <h3 >Land Cruser Prado</h3>
           <p><span> <b>Prix: 30 000F / Jour</b></p>
-            <a href="#">LOUER</a> 
+            <a href="{{url('locations/vehicules')}}">LOUER</a> 
         </div>
       </div>
 
@@ -65,7 +65,7 @@
           <img src="images/auto3.png" class="img-fluid" alt="">
           <h3>Mercedes Cross</h3>
           <p><span> <b>Prix: 20 000F / Jour</b></p>
-           <a href="#">LOUER</a> 
+           <a href="{{url('locations/vehicules')}}">LOUER</a> 
         </div>
       </div>
 
@@ -74,7 +74,7 @@
           <img src="images/auto2.png" class="img-fluid" alt="">
           <h3>Lanborgini</h3>
           <p><span> <b>Prix: 15 000F / Jour</b></p>
-          <a href="#">LOUER</a> 
+          <a href="{{url('locations/vehicules')}}">LOUER</a> 
         </div>
       </div>
 
